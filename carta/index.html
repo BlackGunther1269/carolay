@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amada Carolay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Parisienne&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Parisienne', cursive;
+            background: linear-gradient(to bottom, #ffe4e1, #fff0f5);
+            min-height: 100vh;
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animación de corazones que caen */
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .falling-heart {
+            position: absolute;
+            animation: fall linear infinite;
+            z-index: -1;
+            color: #ff0000; /* Corazones rojos */
+        }
+
+        .falling-heart-content {
+            font-size: 2rem; /* Tamaño del corazón */
+            line-height: 1;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <div class="flex flex-col items-center justify-center min-h-screen w-full">
+        <!-- Título y botón inicial -->
+        <div id="initial-screen" class="flex flex-col items-center justify-center text-center p-8 bg-pink-100 bg-opacity-70 backdrop-blur-sm rounded-3xl shadow-lg transition-all duration-700 ease-in-out max-w-lg md:max-w-3xl lg:max-w-4xl">
+            <!-- Espacio para la foto. Asegúrate de tener tu foto en la carpeta 'images' con el nombre 'tu-foto.jpg'. -->
+            <img src="images/carolay.JPG" alt="Una foto de Carolay" class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-pink-400 shadow-lg mb-6 transform transition-all duration-500 hover:scale-105" />
+
+            <h1 class="text-5xl md:text-6xl font-extrabold text-pink-700 mb-6 drop-shadow-md" style="font-family: 'Dancing Script', cursive;">Para Carolay</h1>
+            <button id="open-button" class="group bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-xl transform transition-all duration-300 hover:scale-105 active:scale-95 text-lg md:text-xl flex items-center space-x-2">
+                <!-- Icono de carta con lazo -->
+                <svg class="w-8 h-8 text-white transform transition-all duration-300 group-hover:-translate-y-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21 8.5L13.5 14L6 8.5V6L13.5 11.5L21 6V8.5Z" />
+                    <path d="M21 17.5V10.5L13.5 16L6 10.5V17.5L13.5 23L21 17.5Z" />
+                    <path d="M12 11.5L2.5 5.5L12 0.5L21.5 5.5L12 11.5Z" />
+                    <path d="M16 11.5L20.5 8.5V15.5L16 18.5V11.5Z" />
+                    <path d="M8 11.5L3.5 8.5V15.5L8 18.5V11.5Z" />
+                    <path d="M13.5 14L21 8.5V6L13.5 11.5L6 6V8.5L13.5 14Z" />
+                </svg>
+                <span>Abre la carta</span>
+            </button>
+        </div>
+
+        <!-- Contenedor de la carta, inicialmente oculto -->
+        <div id="letter-container" class="hidden w-full max-w-lg md:max-w-3xl lg:max-w-4xl bg-white bg-opacity-80 p-8 rounded-3xl shadow-xl border-4 border-pink-300 mt-8 transform scale-90 opacity-0 transition-all duration-700 ease-in-out">
+            <div class="text-lg md:text-xl text-gray-800 leading-relaxed font-normal">
+                <p class="mb-4"><b>Hola Carolay,</b></p>
+                <p class="mb-4"><b>Estoy sentado aquí, pensando en cómo poner en palabras lo que siento, y me doy cuenta de que es casi imposible. Las palabras se quedan cortas para explicar la inmensidad de mi amor por ti. Es algo que me desborda, que me asusta y me llena de alegría al mismo tiempo. Siento que cada latido de mi corazón te pertenece.</b></p>
+                <p class="mb-4"><b>Sé que somos jóvenes, que aún nos queda un mundo por descubrir, pero hay una cosa de la que estoy completamente seguro: quiero que mi vida sea contigo. No busco a nadie más. Tu sonrisa, tus abrazos, el simple hecho de que tus manos encajan a la perfección con las mías, son lo único que necesito.</b></p>
+                <p class="mb-4"><b>Tú eres mi refugio, mi felicidad, mi todo. Contigo me siento completo, como si el destino nos hubiera unido para que nuestras almas se encontraran. Me da un poco de miedo pensar en lo mucho que te quiero, y la idea de perderte me aterra. Un mundo sin tu risa o tu mirada sería un lugar vacío.</b></p>
+                <p class="mb-4"><b>Pero más allá del miedo, lo que más siento es el orgullo de que nuestro amor sea tan real y puro. Eres la persona correcta para mí, la que hace que cada día valga la pena. Si no es contigo, no sería con nadie. Mi corazón no podría amar de otra manera.</b></p>
+                <p class="mb-4"><b>Rezo cada noche para que sigas siendo mi faro, mi hogar. Tu presencia a mi lado es lo único que necesito para ser feliz. Eres la persona que más admiro, mi razón para sonreír. Prometo cuidar este amor y valorar cada segundo que compartimos. Quiero quedarme contigo, Carolay, para construir una vida juntos, sin importar los desafíos. Contigo, todo es posible.</b></p>
+                <p class="mt-8 text-right text-pink-700"><b>Con todo mi amor,</b></p>
+                <p class="text-right text-2xl font-bold mt-2 text-pink-900" style="font-family: 'Dancing Script', cursive;"><b>Gunther</b></p>
+            </div>
+            <!-- Botón de volver -->
+            <div class="flex justify-center mt-8">
+                <button id="return-button" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 active:scale-95">
+                    Volver
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const openButton = document.getElementById('open-button');
+            const returnButton = document.getElementById('return-button');
+            const initialScreen = document.getElementById('initial-screen');
+            const letterContainer = document.getElementById('letter-container');
+
+            // Lógica para la lluvia de corazones
+            function createFallingHeart() {
+                const heart = document.createElement('div');
+                heart.classList.add('falling-heart');
+                const content = document.createElement('span');
+                content.classList.add('falling-heart-content');
+                content.innerHTML = '❤️'; // Usamos un emoji para un corazón
+                heart.appendChild(content);
+
+                const size = Math.random() * 20 + 20; // Tamaño entre 20px y 40px
+                const duration = Math.random() * 5 + 5; // Duración entre 5s y 10s
+                const delay = Math.random() * 5; // Retraso para que aparezcan escalonados
+
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.top = `-5vh`; // Asegura que se creen arriba de la pantalla
+                heart.style.fontSize = `${size}px`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+
+                document.body.appendChild(heart);
+
+                // Elimina el corazón una vez que cae para evitar sobrecargar la memoria
+                heart.addEventListener('animationend', () => {
+                    heart.remove();
+                });
+            }
+
+            // Inicia la lluvia de corazones
+            setInterval(createFallingHeart, 300);
+
+            // Lógica para abrir la carta
+            openButton.addEventListener('click', function() {
+                initialScreen.classList.add('opacity-0', 'scale-90');
+                
+                setTimeout(() => {
+                    initialScreen.classList.add('hidden');
+                    letterContainer.classList.remove('hidden');
+                    letterContainer.classList.add('fade-in-up');
+                    letterContainer.classList.remove('scale-90', 'opacity-0');
+                }, 700);
+            });
+
+            // Lógica para volver
+            returnButton.addEventListener('click', function() {
+                letterContainer.classList.add('opacity-0', 'scale-90');
+                
+                setTimeout(() => {
+                    letterContainer.classList.add('hidden');
+                    initialScreen.classList.remove('hidden');
+                    initialScreen.classList.add('fade-in-up');
+                    initialScreen.classList.remove('scale-90', 'opacity-0');
+                }, 700);
+            });
+        });
+    </script>
+
+</body>
+</html>
